@@ -113,17 +113,22 @@ function App() {
           <button onClick={addNum}>Confirmar</button>
         </div>
         <div className='content results dontshow'>
-          <div className='card--results'>
-            <h2>Moda</h2>
-            <h4 id='moda'>.</h4>
+          <div>
+            <h2>Resultado:</h2>
           </div>
-          <div className='card--results'>
-            <h2>Mediana</h2>
-            <h4 id='mediana'>.</h4>
-          </div>
-          <div className='card--results'>
-            <h2>Média</h2>
-            <h4 id='media'>.</h4>
+          <div className='box--cards'>
+            <div className='card--results'>
+              <h2>Moda</h2>
+              <h4 id='moda'>.</h4>
+            </div>
+            <div className='card--results'>
+              <h2>Mediana</h2>
+              <h4 id='mediana'>.</h4>
+            </div>
+            <div className='card--results'>
+              <h2>Média</h2>
+              <h4 id='media'>.</h4>
+            </div>
           </div>
         </div>
       </div>

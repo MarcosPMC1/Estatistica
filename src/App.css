@@ -40,11 +40,12 @@
 .card {
   position: absolute;
   top: 10%;
-  left: 30%;
-  width: 40%;
+  left: 20%;
+  width: 60%;
   height: 70%;
   background: #232323;
   transition: all 300ms;
+  border-radius: 15px;
  }
 
 .content{
@@ -71,6 +72,7 @@
   outline: none;
   -moz-appearance: textfield;
   margin: 0;
+  border-radius: 10px;
  }
 
  input::-webkit-outer-spin-button,
@@ -126,14 +128,18 @@ input::-webkit-inner-spin-button {
  }
  
  .card--results:hover {
-  border: #006fff 0.2em solid;
+  border: rgb(93 24 220) 0.2em solid;
  }
 
  .results{
-  display: flex;
-  flex-direction: row;
   width: 90%;
   padding: 1em 2em;
+ }
+
+ .box--cards{
+  display: flex;
+  flex-direction: row;
+  gap: 1em;
  }
 
  .dontshow{
