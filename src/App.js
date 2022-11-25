@@ -26,7 +26,7 @@ function App() {
     const mapearParaArray = (contagem) => {
       const counter = []
       Object.keys(contagem).filter((a) => {
-        counter.push(contagem[a])
+        return counter.push(contagem[a]);
       })
       return counter
     }
@@ -46,7 +46,7 @@ function App() {
       let esq=0;
       let mediana;
       arr.sort((a, b) => a-b);
-      if(arr.length % 2 == 0){
+      if(arr.length % 2 === 0){
         let meio = arr.length / 2;
         mediana = (parseInt(arr[meio]) + parseInt(arr[meio - 1])) / 2;
       }else{
