@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/Estatistica/static/css/main.073c9b0a.css",
+    "main.js": "/Estatistica/static/js/main.19f84e9e.js",
+    "index.html": "/Estatistica/index.html",
+    "main.073c9b0a.css.map": "/Estatistica/static/css/main.073c9b0a.css.map",
+    "main.19f84e9e.js.map": "/Estatistica/static/js/main.19f84e9e.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.073c9b0a.css",
+    "static/js/main.19f84e9e.js"
+  ]
+}
