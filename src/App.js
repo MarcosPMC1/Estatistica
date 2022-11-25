@@ -107,7 +107,6 @@ function App() {
           <button onClick={init}>Confirmar</button>
         </div>
         <div className='content data dontshow'>
-          <ProgressBar completed={0} className="progress-bar" />
           <h2>Insira um valor: </h2>
           <input type='number' id='value' required></input>
           <button onClick={addNum}>Confirmar</button>
