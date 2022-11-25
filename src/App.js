@@ -1,5 +1,4 @@
 import './App.css';
-import ProgressBar from "@ramonak/react-progress-bar";
 
 function App() {
   let qtd = 0;
