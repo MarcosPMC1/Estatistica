@@ -39,7 +39,12 @@ function App() {
       let contagem = ordenado.map(mapear).reduce(reduzir, {}) 
       const counter = mapearParaArray(contagem)
       const MAX = achaMaior(counter) 
-      return filtraModa(contagem, MAX)
+      let result =  filtraModa(contagem, MAX);
+      if (result.length === arr.length){
+        return 0;
+      }else{
+        return result;
+      }
     }
 
     //mediana
@@ -80,9 +85,9 @@ function App() {
     console.log(val.length);
     console.log(qtd);
     if(parseInt(val.length) === parseInt(qtd)){
-      document.getElementById('moda').value = moda(val);
-      document.getElementById('mediana').value = medianof2Arr(val);
-      document.getElementById('media').value = media(val);
+      document.getElementById('moda').innerHTML = moda(val);
+      document.getElementById('mediana').innerHTML = medianof2Arr(val);
+      document.getElementById('media').innerHTML = media(val);
 
       document.getElementsByClassName('data')[0].classList.add('dontshow');
       document.getElementsByClassName('results')[0].classList.remove('dontshow');
