@@ -1,18 +1,18 @@
 import './App.css';
+import ProgressBar from "@ramonak/react-progress-bar";
 
 function App() {
-  const calcular = () => {
-    const qtd = document.getElementById("num").value;
-    let val = [];
-    for (let i = qtd; i > 0; i--) {
-      val.push(prompt("insiara um valor"));
-    }
-    console.log(val.sort((a, b) => a-b));
-    console.log("Moda: " + moda(val));
-    console.log("Mediana: " + medianof2Arr(val));
-    console.log("Media: " + media(val))
-  }
+  let qtd = 0;
 
+  const init = () => {
+    qtd = document.getElementById("num").value;
+    if(qtd !== ''){
+      document.getElementsByClassName('init')[0].style.visibility = 'hidden';
+      document.getElementsByClassName('init')[0].style.display = 'none';
+      document.getElementsByClassName('data')[0].classList.remove('dontshow');
+    }
+  }
+  // moda
   const achaMaior = (counter) => Math.max.apply(null, counter)
   const ordenacao = (a, b) => a - b;
   const ordenar = (arr, ordenacao) => arr.sort(ordenacao)
@@ -42,6 +42,7 @@ function App() {
       return filtraModa(contagem, MAX)
     }
 
+    //mediana
     function medianof2Arr(arr) {
       let esq=0;
       let mediana;
@@ -57,6 +58,7 @@ function App() {
       return mediana;
   }
 
+  //media
   function media(arr){
     let contador = 0;
     arr.forEach(element => {
@@ -67,10 +69,59 @@ function App() {
     return total;
   }
 
+  let val = [];
+  const addNum = () => {
+    let value = document.getElementById('value').value;
+    if (value !== ""){
+      val.push(value);
+    }
+    document.getElementById('value').value = '';
+    console.log(val);
+    console.log(val.length);
+    console.log(qtd);
+    if(parseInt(val.length) === parseInt(qtd)){
+      document.getElementById('moda').value = moda(val);
+      document.getElementById('mediana').value = medianof2Arr(val);
+      document.getElementById('media').value = media(val);
+
+      document.getElementsByClassName('data')[0].classList.add('dontshow');
+      document.getElementsByClassName('results')[0].classList.remove('dontshow');
+
+      console.log(val.sort((a, b) => a-b));
+      console.log("Moda: " + moda(val));
+      console.log("Mediana: " + medianof2Arr(val));
+      console.log("Media: " + media(val))
+    }
+  }
   return (
     <div className="App">
-      <input type='number' id='num'></input>
-      <button onClick={calcular}>Confirmar</button>
+      <div className='card'>
+        <div className='content init'>
+          <h2>Insira a quantidade de dados: </h2>
+          <input type='number' id='num'></input>
+          <button onClick={init}>Confirmar</button>
+        </div>
+        <div className='content data dontshow'>
+          <ProgressBar completed={0} className="progress-bar" />
+          <h2>Insira um valor: </h2>
+          <input type='number' id='value' required></input>
+          <button onClick={addNum}>Confirmar</button>
+        </div>
+        <div className='content results dontshow'>
+          <div className='card--results'>
+            <h2>Moda</h2>
+            <h4 id='moda'>.</h4>
+          </div>
+          <div className='card--results'>
+            <h2>Mediana</h2>
+            <h4 id='mediana'>.</h4>
+          </div>
+          <div className='card--results'>
+            <h2>Média</h2>
+            <h4 id='media'>.</h4>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
